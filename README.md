@@ -1,0 +1,1 @@
+# Barisan-aritmatika-dan-geometrii
