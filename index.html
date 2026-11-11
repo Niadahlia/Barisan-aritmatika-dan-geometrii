@@ -16,13 +16,29 @@
     .paper-fold-preview {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
+    /* Format Pengaturan Cetak PDF */
+    @media print {
+      .no-print, button {
+        display: none !important;
+      }
+      body {
+        background-color: white !important;
+        padding: 0 !important;
+      }
+      section {
+        box-shadow: none !important;
+        border: 1px solid #cbd5e1 !important;
+        break-inside: avoid;
+        margin-bottom: 1rem !important;
+      }
+    }
   </style>
 </head>
 <body class="p-3 sm:p-6 md:p-10 max-w-5xl mx-auto">
 
   <!-- Header Banner -->
   <header class="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 mb-6 shadow-xl border border-slate-800 relative overflow-hidden">
-    <div class="absolute -right-10 -bottom-10 opacity-10 text-blue-400">
+    <div class="absolute -right-10 -bottom-10 opacity-10 text-blue-400 no-print">
       <i class="fa-solid fa-magnifying-glass-chart text-[180px]"></i>
     </div>
     <div class="relative z-10">
@@ -81,7 +97,7 @@
       <li>Simulasikan atau ikuti instruksi lipatan kertas pada <b>Aktivitas 1</b>, lalu isi tabel pencatatan.</li>
       <li>Hitung nilai perbandingan antarsuku pada <b>Aktivitas 2</b> untuk menemukan mana Barisan Geometri dan Barisan Aritmetika.</li>
       <li>Diskusikan bersama kelompok dan jawab 1 pertanyaan kesimpulan pada <b>Aktivitas 3</b>.</li>
-      <li>Klik tombol <b>"Cek Jawaban / Evaluasi Kelompok"</b> di paling bawah setelah selesai.</li>
+      <li>Klik tombol <b>"Cek Jawaban / Evaluasi Kelompok"</b> untuk melihat skor, lalu klik <b>"Simpan / Cetak PDF"</b> untuk mengunduh pengerjaan kelompokmu.</li>
     </ol>
   </section>
 
@@ -92,7 +108,7 @@
         <span class="w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-extrabold">1</span>
         Eksplorasi Konkrit: Simulasi Lipat Kertas HVS
       </h2>
-      <span class="text-xs font-bold bg-slate-100 text-slate-600 px-3 py-1 rounded-full">Tahap Discovery 1</span>
+      <span class="text-xs font-bold bg-slate-100 text-slate-600 px-3 py-1 rounded-full no-print">Tahap Discovery 1</span>
     </div>
 
     <!-- Interactive Paper Folding Simulation Block -->
@@ -101,7 +117,7 @@
         <p class="text-xs text-blue-400 font-bold uppercase tracking-wider mb-1">Simulator Visual Lipatan</p>
         <h4 class="text-xl font-extrabold text-white mb-2">Cobalah Melipat Kertas!</h4>
         <p class="text-xs text-slate-300 mb-4">Klik tombol di samping untuk mensimulasikan jumlah lipatan kertas HVS secara nyata.</p>
-        <div class="flex items-center gap-3 justify-center md:justify-start">
+        <div class="flex items-center gap-3 justify-center md:justify-start no-print">
           <button type="button" onclick="changeFold(-1)" class="bg-slate-800 hover:bg-slate-700 active:scale-95 text-white font-bold px-4 py-2 rounded-lg text-sm border border-slate-700">
             <i class="fa-solid fa-minus"></i> Kurangi
           </button>
@@ -177,7 +193,7 @@
         <span class="w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-extrabold">2</span>
         Detektif Rasio: Menganalisis Perbandingan Antarsuku
       </h2>
-      <span class="text-xs font-bold bg-slate-100 text-slate-600 px-3 py-1 rounded-full">Tahap Discovery 2</span>
+      <span class="text-xs font-bold bg-slate-100 text-slate-600 px-3 py-1 rounded-full no-print">Tahap Discovery 2</span>
     </div>
     
     <p class="text-xs text-slate-600 mb-4 font-medium">
@@ -286,7 +302,7 @@
         <span class="w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-extrabold">3</span>
         Diskusi Kelompok & Penarikan Kesimpulan
       </h2>
-      <span class="text-xs font-bold bg-slate-100 text-slate-600 px-3 py-1 rounded-full">Tahap Discovery 3</span>
+      <span class="text-xs font-bold bg-slate-100 text-slate-600 px-3 py-1 rounded-full no-print">Tahap Discovery 3</span>
     </div>
 
     <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 sm:p-5">
@@ -297,16 +313,20 @@
     </div>
   </section>
 
-  <!-- Tombol Evaluasi -->
-  <div class="text-center mb-10">
-    <button type="button" onclick="evaluateLKPD()" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 active:scale-95 text-white font-extrabold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-lg transition duration-200 flex items-center gap-2 mx-auto">
+  <!-- Tombol Evaluasi & Simpan PDF -->
+  <div class="flex flex-wrap items-center justify-center gap-4 mb-10 no-print">
+    <button type="button" onclick="evaluateLKPD()" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 active:scale-95 text-white font-extrabold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-lg transition duration-200 flex items-center gap-2">
       <i class="fa-solid fa-square-check text-lg"></i> Cek Jawaban / Evaluasi Kelompok
+    </button>
+    
+    <button type="button" onclick="window.print()" class="bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-lg transition duration-200 flex items-center gap-2">
+      <i class="fa-solid fa-file-pdf text-lg"></i> Simpan / Cetak PDF
     </button>
   </div>
 
   <!-- Modal Evaluasi Hasil -->
-  <div id="resultModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-100 text-center relative animate-bounce-short">
+  <div id="resultModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 no-print">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-100 text-center relative">
       <div id="modalIcon" class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl"></div>
       <h3 id="modalTitle" class="text-xl font-extrabold text-slate-800 mb-1"></h3>
       <p id="modalScore" class="text-3xl font-black text-blue-600 mb-3"></p>
