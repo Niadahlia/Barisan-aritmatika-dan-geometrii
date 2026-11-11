@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LKPD Interaktif: Detektif Rasio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+    }
+    .paper-fold-preview {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+</head>
+<body class="p-3 sm:p-6 md:p-10 max-w-5xl mx-auto">
+
+  <!-- Header Banner -->
+  <header class="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 mb-6 shadow-xl border border-slate-800 relative overflow-hidden">
+    <div class="absolute -right-10 -bottom-10 opacity-10 text-blue-400">
+      <i class="fa-solid fa-magnifying-glass-chart text-[180px]"></i>
+    </div>
+    <div class="relative z-10">
+      <div class="inline-flex items-center gap-2 bg-blue-600/30 text-blue-300 text-xs font-bold px-3 py-1 rounded-full border border-blue-500/30 mb-3">
+        <i class="fa-solid fa-folder-open"></i> LEMBAR KERJA PESERTA DIDIK (LKPD) INTERAKTIF
+      </div>
+      <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">
+        🕵️‍♂️ DETEKTIF RASIO
+      </h1>
+      <p class="text-slate-300 text-sm sm:text-base font-medium">
+        Mengungkap Rahasia Pengali Tetap pada Barisan Geometri
+      </p>
+    </div>
+  </header>
+
+  <!-- Form Identitas Kelompok -->
+  <section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 mb-6">
+    <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+      <i class="fa-solid fa-id-card text-blue-600"></i> Identitas Kelompok Peserta Didik
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Nama Kelompok</label>
+        <input type="text" id="namaKelompok" placeholder="Contoh: Kelompok Pythagoras" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+      </div>
+      <div>
+        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Kelas / Semester</label>
+        <input type="text" id="kelasSemester" placeholder="Tuliskan Kelas & Semester..." class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+      </div>
+      <div class="md:col-span-2">
+        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Anggota Kelompok (4 Orang)</label>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <input type="text" placeholder="1. Nama Anggota 1" class="bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          <input type="text" placeholder="2. Nama Anggota 2" class="bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          <input type="text" placeholder="3. Nama Anggota 3" class="bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          <input type="text" placeholder="4. Nama Anggota 4" class="bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
+        </div>
+      </div>
+      <div>
+        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Mata Pelajaran</label>
+        <input type="text" value="Matematika" readonly class="w-full bg-slate-100 text-slate-600 border border-slate-200 rounded-lg px-3 py-2 text-sm font-semibold">
+      </div>
+      <div>
+        <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Satuan Pendidikan</label>
+        <input type="text" value="SMKN 1 Baros" readonly class="w-full bg-slate-100 text-slate-600 border border-slate-200 rounded-lg px-3 py-2 text-sm font-semibold">
+      </div>
+    </div>
+  </section>
+
+  <!-- Petunjuk Pengerjaan -->
+  <section class="bg-blue-50 border border-blue-200 rounded-2xl p-5 mb-6 text-blue-900">
+    <h3 class="font-bold text-sm flex items-center gap-2 mb-2 text-blue-800">
+      <i class="fa-solid fa-circle-info"></i> Petunjuk Pengerjaan:
+    </h3>
+    <ol class="list-decimal list-inside text-xs sm:text-sm space-y-1 text-blue-800 font-medium">
+      <li>Simulasikan atau ikuti instruksi lipatan kertas pada <b>Aktivitas 1</b>, lalu isi tabel pencatatan.</li>
+      <li>Hitung nilai perbandingan antarsuku pada <b>Aktivitas 2</b> untuk menemukan mana Barisan Geometri dan Barisan Aritmetika.</li>
+      <li>Diskusikan bersama kelompok dan jawab 1 pertanyaan kesimpulan pada <b>Aktivitas 3</b>.</li>
+      <li>Klik tombol <b>"Cek Jawaban / Evaluasi Kelompok"</b> di paling bawah setelah selesai.</li>
+    </ol>
+  </section>
+
+  <!-- AKTIVITAS 1: Eksplorasi Lipat Kertas HVS -->
+  <section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 mb-6">
+    <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+      <h2 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+        <span class="w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-extrabold">1</span>
+        Eksplorasi Konkrit: Simulasi Lipat Kertas HVS
+      </h2>
+      <span class="text-xs font-bold bg-slate-100 text-slate-600 px-3 py-1 rounded-full">Tahap Discovery 1</span>
+    </div>
+
+    <!-- Interactive Paper Folding Simulation Block -->
+    <div class="bg-slate-900 text-white p-5 rounded-xl mb-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="text-center md:text-left flex-1">
+        <p class="text-xs text-blue-400 font-bold uppercase tracking-wider mb-1">Simulator Visual Lipatan</p>
+        <h4 class="text-xl font-extrabold text-white mb-2">Cobalah Melipat Kertas!</h4>
+        <p class="text-xs text-slate-300 mb-4">Klik tombol di samping untuk mensimulasikan jumlah lipatan kertas HVS secara nyata.</p>
+        <div class="flex items-center gap-3 justify-center md:justify-start">
+          <button type="button" onclick="changeFold(-1)" class="bg-slate-800 hover:bg-slate-700 active:scale-95 text-white font-bold px-4 py-2 rounded-lg text-sm border border-slate-700">
+            <i class="fa-solid fa-minus"></i> Kurangi
+          </button>
+          <span id="foldCountText" class="text-lg font-extrabold text-yellow-400 bg-slate-950 px-4 py-1.5 rounded-lg border border-slate-800">0 Lipatan</span>
+          <button type="button" onclick="changeFold(1)" class="bg-blue-600 hover:bg-blue-500 active:scale-95 text-white font-bold px-4 py-2 rounded-lg text-sm shadow-md">
+            <i class="fa-solid fa-plus"></i> Lipat Kertas
+          </button>
+        </div>
+      </div>
+
+      <!-- Visual Graphic Representation -->
+      <div class="w-full md:w-56 h-36 bg-slate-800 border-2 border-dashed border-slate-600 rounded-xl p-3 flex items-center justify-center">
+        <div id="paperGraphic" class="grid grid-cols-1 gap-1 w-full h-full p-2 bg-yellow-100 rounded text-slate-800 font-bold text-xs flex items-center justify-center text-center shadow">
+          <span>1 Bagian (Kertas Utuh)</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-xs text-slate-600 mb-3 font-medium">Lengkapi tabel berikut berdasarkan pengamatan simulasi lipatan kertas HVS di atas:</p>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-xs sm:text-sm text-left border-collapse border border-slate-200">
+        <thead>
+          <tr class="bg-slate-100 text-slate-700">
+            <th class="p-3 border border-slate-200">Jumlah Lipatan (Urutan Suku)</th>
+            <th class="p-3 border border-slate-200">Banyak Bagian Kertas Terbentuk</th>
+            <th class="p-3 border border-slate-200">Pola Perkalian</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-3 border border-slate-200 font-semibold bg-slate-50">0 Lipatan (U1 / Suku Pertama)</td>
+            <td class="p-3 border border-slate-200 font-bold text-blue-600">1 Bagian</td>
+            <td class="p-3 border border-slate-200 text-slate-500">1 (Awal)</td>
+          </tr>
+          <tr>
+            <td class="p-3 border border-slate-200 font-semibold bg-slate-50">1 Lipatan (U2)</td>
+            <td class="p-3 border border-slate-200 font-bold text-blue-600">2 Bagian</td>
+            <td class="p-3 border border-slate-200 text-slate-500">1 x 2 = 2</td>
+          </tr>
+          <tr>
+            <td class="p-3 border border-slate-200 font-semibold bg-slate-50">2 Lipatan (U3)</td>
+            <td class="p-3 border border-slate-200 font-bold text-blue-600">4 Bagian</td>
+            <td class="p-3 border border-slate-200 text-slate-500">2 x 2 = 4</td>
+          </tr>
+          <tr>
+            <td class="p-3 border border-slate-200 font-semibold bg-slate-50">3 Lipatan (U4)</td>
+            <td class="p-3 border border-slate-200">
+              <input type="number" id="act1_u4" placeholder="..." class="w-24 bg-blue-50/50 border border-blue-300 rounded px-2 py-1 font-bold text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </td>
+            <td class="p-3 border border-slate-200">
+              <input type="text" id="act1_pola4" placeholder="contoh: 4 x 2" class="w-full bg-slate-50 border border-slate-300 rounded px-2 py-1 text-xs">
+            </td>
+          </tr>
+          <tr>
+            <td class="p-3 border border-slate-200 font-semibold bg-slate-50">4 Lipatan (U5)</td>
+            <td class="p-3 border border-slate-200">
+              <input type="number" id="act1_u5" placeholder="..." class="w-24 bg-blue-50/50 border border-blue-300 rounded px-2 py-1 font-bold text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </td>
+            <td class="p-3 border border-slate-200">
+              <input type="text" id="act1_pola5" placeholder="contoh: 8 x 2" class="w-full bg-slate-50 border border-slate-300 rounded px-2 py-1 text-xs">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- AKTIVITAS 2: Detektif Rasio (Sederhana - 3 Soal) -->
+  <section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 mb-6">
+    <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+      <h2 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+        <span class="w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-extrabold">2</span>
+        Detektif Rasio: Menganalisis Perbandingan Antarsuku
+      </h2>
+      <span class="text-xs font-bold bg-slate-100 text-slate-600 px-3 py-1 rounded-full">Tahap Discovery 2</span>
+    </div>
+    
+    <p class="text-xs text-slate-600 mb-4 font-medium">
+      Hitunglah perbandingan suku ke-2 dengan suku ke-1 (U2 / U1) dan suku ke-3 dengan suku ke-2 (U3 / U2). Tentukan apakah hasil baginya tetap, jenis barisannya, serta berapa nilai rasionya (r)!
+    </p>
+
+    <div class="space-y-4">
+      
+      <!-- Barisan 1 -->
+      <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-slate-50 transition">
+        <div class="font-extrabold text-slate-800 text-sm sm:text-base mb-3 flex items-center gap-2">
+          <span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs font-bold">Barisan 1</span>
+          2, 6, 18, 54
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+          <div>
+            <label class="block text-[11px] font-bold text-slate-500 mb-1">Perbandingan U2 / U1</label>
+            <input type="text" id="b1_ratio1" placeholder="contoh: 6/2 = 3" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-slate-500 mb-1">Perbandingan U3 / U2</label>
+            <input type="text" id="b1_ratio2" placeholder="contoh: 18/6 = 3" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-slate-500 mb-1">Jenis Barisan</label>
+            <select id="b1_type" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium">
+              <option value="">-- Pilih Jenis --</option>
+              <option value="geometri">Barisan Geometri</option>
+              <option value="aritmetika">Barisan Aritmetika</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-slate-500 mb-1">Nilai Rasio (r)</label>
+            <input type="text" id="b1_r" placeholder="r = ?" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs font-bold text-blue-700 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+        </div>
+      </div>
+
+      <!-- Barisan 2 -->
+      <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-slate-50 transition">
+        <div class="font-extrabold text-slate-800 text-sm sm:text-base mb-3 flex items-center gap-2">
+          <span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs font-bold">Barisan 2</span>
+          4, 9, 14, 19
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+          <div>
+            <label class="block text-[11px] font-bold text-slate-500 mb-1">Perbandingan U2 / U1</label>
+            <input type="text" id="b2_ratio1" placeholder="contoh: 9/4 = 2.25" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-slate-500 mb-1">Perbandingan U3 / U2</label>
+            <input type="text" id="b2_ratio2" placeholder="contoh: 14/9 = 1.55" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-slate-500 mb-1">Jenis Barisan</label>
+            <select id="b2_type" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium">
+              <option value="">-- Pilih Jenis --</option>
+              <option value="geometri">Barisan Geometri</option>
+              <option value="aritmetika">Barisan Aritmetika</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-slate-500 mb-1">Nilai Rasio (r)</label>
+            <input type="text" id="b2_r" placeholder="Tulis 'Tidak Ada' / '-'" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs font-bold text-slate-700 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+        </div>
+      </div>
+
+      <!-- Barisan 3 -->
+      <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-slate-50 transition">
+        <div class="font-extrabold text-slate-800 text-sm sm:text-base mb-3 flex items-center gap-2">
+          <span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs font-bold">Barisan 3</span>
+          80, 40, 20, 10
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+          <div>
+            <label class="block text-[11px] font-bold text-slate-500 mb-1">Perbandingan U2 / U1</label>
+            <input type="text" id="b3_ratio1" placeholder="contoh: 40/80 = 1/2" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-slate-500 mb-1">Perbandingan U3 / U2</label>
+            <input type="text" id="b3_ratio2" placeholder="contoh: 20/40 = 1/2" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-slate-500 mb-1">Jenis Barisan</label>
+            <select id="b3_type" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium">
+              <option value="">-- Pilih Jenis --</option>
+              <option value="geometri">Barisan Geometri</option>
+              <option value="aritmetika">Barisan Aritmetika</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-[11px] font-bold text-slate-500 mb-1">Nilai Rasio (r)</label>
+            <input type="text" id="b3_r" placeholder="contoh: 1/2" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs font-bold text-blue-700 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AKTIVITAS 3: Diskusi Analitis (1 Pertanyaan Ringkas) -->
+  <section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 mb-8">
+    <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+      <h2 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+        <span class="w-7 h-7 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-extrabold">3</span>
+        Diskusi Kelompok & Penarikan Kesimpulan
+      </h2>
+      <span class="text-xs font-bold bg-slate-100 text-slate-600 px-3 py-1 rounded-full">Tahap Discovery 3</span>
+    </div>
+
+    <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 sm:p-5">
+      <label class="block font-bold text-slate-800 text-xs sm:text-sm mb-2 leading-relaxed">
+        Berdasarkan pengamatanmu pada Aktivitas 1 dan 2, jelaskan dengan kalimatmu sendiri apa perbedaan utama antara Barisan Aritmetika dan Barisan Geometri, serta bagaimana cara menentukan nilai rasionya!
+      </label>
+      <textarea id="act3_kesimpulan" rows="4" placeholder="Tuliskan jawaban kelompokmu di sini... (Contoh: Barisan aritmetika perubahannya ditambah/dikurang memiliki beda, sedangkan geometri perubahannya dikali/dibagi memiliki rasio r = U2 / U1 = Un / Un-1)" class="w-full bg-white border border-slate-300 rounded-lg p-3 text-xs sm:text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none leading-relaxed"></textarea>
+    </div>
+  </section>
+
+  <!-- Tombol Evaluasi -->
+  <div class="text-center mb-10">
+    <button type="button" onclick="evaluateLKPD()" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 active:scale-95 text-white font-extrabold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-lg transition duration-200 flex items-center gap-2 mx-auto">
+      <i class="fa-solid fa-square-check text-lg"></i> Cek Jawaban / Evaluasi Kelompok
+    </button>
+  </div>
+
+  <!-- Modal Evaluasi Hasil -->
+  <div id="resultModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-100 text-center relative animate-bounce-short">
+      <div id="modalIcon" class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl"></div>
+      <h3 id="modalTitle" class="text-xl font-extrabold text-slate-800 mb-1"></h3>
+      <p id="modalScore" class="text-3xl font-black text-blue-600 mb-3"></p>
+      <p id="modalDesc" class="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed"></p>
+      <button type="button" onclick="closeModal()" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl text-sm transition">
+        Tutup & Periksa Kembali
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // State Lipatan Kertas Interactive
+    let currentFold = 0;
+    const paperGraphic = document.getElementById('paperGraphic');
+    const foldCountText = document.getElementById('foldCountText');
+
+    function changeFold(delta) {
+      currentFold = Math.max(0, Math.min(4, currentFold + delta));
+      foldCountText.innerText = currentFold + " Lipatan";
+
+      const parts = Math.pow(2, currentFold);
+      let gridCols = 'grid-cols-1';
+      if (parts === 2) gridCols = 'grid-cols-2';
+      if (parts === 4) gridCols = 'grid-cols-2 grid-rows-2';
+      if (parts === 8) gridCols = 'grid-cols-4 grid-rows-2';
+      if (parts === 16) gridCols = 'grid-cols-4 grid-rows-4';
+
+      paperGraphic.className = `grid ${gridCols} gap-1 w-full h-full p-1.5 bg-yellow-100 rounded text-slate-800 font-bold text-[10px] flex items-center justify-center text-center shadow`;
+      
+      let html = '';
+      for (let i = 0; i < parts; i++) {
+        html += `<div class="bg-yellow-200 border border-yellow-400/60 rounded flex items-center justify-center">${parts <= 4 ? (i+1) : ''}</div>`;
+      }
+      paperGraphic.innerHTML = html;
+    }
+
+    // Evaluasi Skor LKPD
+    function evaluateLKPD() {
+      let score = 0;
+
+      // Aktivitas 1 Check (Max 30)
+      const u4 = parseInt(document.getElementById('act1_u4').value);
+      const u5 = parseInt(document.getElementById('act1_u5').value);
+      if (u4 === 8) score += 15;
+      if (u5 === 16) score += 15;
+
+      // Aktivitas 2 Check (Max 45)
+      const b1_type = document.getElementById('b1_type').value;
+      const b1_r = document.getElementById('b1_r').value.trim();
+      if (b1_type === 'geometri') score += 7.5;
+      if (b1_r === '3') score += 7.5;
+
+      const b2_type = document.getElementById('b2_type').value;
+      if (b2_type === 'aritmetika') score += 15;
+
+      const b3_type = document.getElementById('b3_type').value;
+      const b3_r = document.getElementById('b3_r').value.trim();
+      if (b3_type === 'geometri') score += 7.5;
+      if (b3_r === '1/2' || b3_r === '0.5' || b3_r === '0,5') score += 7.5;
+
+      // Aktivitas 3 Check (Max 25)
+      const kesimpulan = document.getElementById('act3_kesimpulan').value.trim();
+      if (kesimpulan.length >= 15) {
+        score += 25;
+      } else if (kesimpulan.length > 0) {
+        score += 10;
+      }
+
+      // Display Modal Results
+      const modal = document.getElementById('resultModal');
+      const modalIcon = document.getElementById('modalIcon');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalScore = document.getElementById('modalScore');
+      const modalDesc = document.getElementById('modalDesc');
+
+      modalScore.innerText = score + " / 100 Poin";
+
+      if (score >= 80) {
+        modalIcon.className = "w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl bg-emerald-100 text-emerald-600";
+        modalIcon.innerHTML = '<i class="fa-solid fa-trophy"></i>';
+        modalTitle.innerText = "Luar Biasa, Detektif!";
+        modalDesc.innerText = "Kelompokmu berhasil menemukan pola barisan geometri dan nilai rasio dengan sangat tepat!";
+      } else if (score >= 60) {
+        modalIcon.className = "w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl bg-amber-100 text-amber-600";
+        modalIcon.innerHTML = '<i class="fa-solid fa-star-half-stroke"></i>';
+        modalTitle.innerText = "Hasil Cukup Baik!";
+        modalDesc.innerText = "Beberapa perbandingan rasio sudah tepat. Periksa kembali hitungan pecahan dan perbandingan antarsuku ya!";
+      } else {
+        modalIcon.className = "w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl bg-rose-100 text-rose-600";
+        modalIcon.innerHTML = '<i class="fa-solid fa-magnifying-glass"></i>';
+        modalTitle.innerText = "Perlu Diteliti Lagi!";
+        modalDesc.innerText = "Jangan berkecil hati. Coba diskusikan kembali hasil perbandingan U2/U1 bersama teman kelompokmu!";
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('resultModal').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
